@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "friendly",
+    "slug": "friendly",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#030303"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "icon": "./assets/icon.png"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#030303"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

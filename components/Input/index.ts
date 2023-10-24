@@ -1,0 +1,1 @@
+export {_Input, type _InputProps} from './Input'

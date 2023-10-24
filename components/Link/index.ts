@@ -1,0 +1,1 @@
+export {_Link, type _LinkProps} from './Link'
