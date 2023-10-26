@@ -55,6 +55,14 @@ const styles = StyleSheet.create({
     },
 
     error_input: {
+        width: "100%",
+        paddingVertical: 12,
+        borderRadius: 8,
+        paddingHorizontal: 14,
+        borderWidth: 1,
+        borderStyle: 'solid',
+        color: '#FFFFFF',
+        fontSize: 18,
         borderColor: '#ff0000',
     },
 

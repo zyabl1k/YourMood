@@ -6,11 +6,19 @@ export const colors = {
     white100: "#fff",
     white70: "#f6f6f6",
     white50: "#ccc",
+    pink100: "#ffc0cb"
 }
 
 export const g = StyleSheet.create({
-    main: {
+    main_dark: {
         backgroundColor: colors.black100,
+        justifyContent: "center",
+        alignContent: "space-around",
+        display: "flex"
+    },
+
+    main_light: {
+        backgroundColor: colors.white100,
         justifyContent: "center",
         alignContent: "space-around",
         display: "flex"

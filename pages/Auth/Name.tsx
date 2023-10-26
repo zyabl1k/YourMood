@@ -1,16 +1,17 @@
-import {View, Text, StyleSheet, SafeAreaView, TouchableWithoutFeedback, Keyboard} from "react-native";
-import { f, g } from "../../styles/global";
+import {View, Text, StyleSheet, SafeAreaView, TouchableWithoutFeedback, Keyboard, Button} from "react-native";
+import {f, g} from "../../styles/global";
 import { Component } from "../../components/export";
 import {useState} from "react";
-import {useDispatch} from "react-redux";
-import {loginUser, setUserName} from "../../store/slices/userSlice";
-import {store} from "../../store/store";
+import {useDispatch, useSelector} from "react-redux";
+import {setUserName} from "../../store/slices/userSlice";
+import {RootState, store} from "../../store/store";
+import {set} from "../../store/slices/isDark";
 
 const Name = ({navigation}) => {
     const [valueLogin, setValueLogin] = useState('');
     const [isFocused, setIsFocused] = useState(false);
     const [errorText, setErrorText] = useState('');
-    const dispatch = useDispatch();
+    const isDark = useSelector((state: RootState) => state.isDark.value)
 
     const changeText = (text:string) => {
         const empty = !text.length
@@ -34,7 +35,8 @@ const Name = ({navigation}) => {
 
     return (
         <TouchableWithoutFeedback onPress={() => {setIsFocused(false); Keyboard.dismiss();}}>
-            <SafeAreaView style={[g.main, styles.container]}>
+            <SafeAreaView style={[isDark ? g.main_dark : g.main_light, styles.container]}>
+                <Component._Button onPress={() => store.dispatch(set(!isDark))} style={{marginTop: 35}} width="10%" backgroundColor="#fff" fontFamily="syne-m"  />
                 <View style={styles.content}>
                     <Text style={[f.textBold, {fontSize: 36}]}>Введите свое имя</Text>
                     <Component._Input focused={isFocused} errorText={errorText} setFocused={setFocused} type={"default"} value={valueLogin} onChange={changeText} placeholder="Напишите имя" />
